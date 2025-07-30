@@ -2,7 +2,6 @@
 
 
 class Solution {
-    /*
     // 1st Approach: Brute Force(Using 2 Loops) - Time Complexity = O(n^2), Space  Complexity = O(1)
     public int majorityElement(int[] nums) {
         // Variable to store the majority element
@@ -35,7 +34,6 @@ class Solution {
         // Return the majority element
         return ele;
     }
-    */
 
     /*
     // 2nd Approach: Another Brute Force(Using 2 Loops) - Time Complexity = O(n^2), Space  Complexity = O(1)
@@ -65,55 +63,29 @@ class Solution {
         return -1;
     }
     */
-
-    /*       
+       
     // 5th Approach: Better Approach(Using HashMap) - Time Complexity = O(n), Space  Complexity = O(n)
-    public int majorityElement(int[] nums) {
-        // Create a HashMap to store the count of each element
-        HashMap<Integer, Integer> map = new HashMap<>();
-        use this only Map<Integer, Integer> map = new HashMap<>();
-        // Traverse the array to populate the HashMap with counts
-        for (int i = 0; i < nums.length; i++) {
-            // Get the current count of nums[i] from the map; default to 0 if not present
-            int value = map.getOrDefault(nums[i], 0);
-            
-            // Update the count of nums[i] in the map
-            map.put(nums[i], value + 1);
-        }
+   public int majorityElement(int[] nums) {
+    // Use Map interface for flexibility
+    Map<Integer, Integer> map = new HashMap<>();
 
-        // Traverse the array again to find the majority element
-        // for (int i = 0; i < nums.length; i++) {
-        //     // Check if the count of the current element is greater than n / 2
-        //     if (map.get(nums[i]) > nums.length / 2) {
-        //         // Return the current element as the majority element
-        //         return nums[i];
-        //     }
-        // }
-        
-        // Traverse the HashMap to find the element with count > n / 2
-        // for (int key : map.keySet()) {
-            
-        //     // Check if the count of the current element is more than half of the array length
-        //     if (map.get(key) > nums.length / 2) {
-        //         return key; // Return the majority element
-        //     }
-        // }
-
-        // Traverse the HashMap entries to find the majority element
-        for (Map.Entry<Integer, Integer> it : map.entrySet()) {
-            
-            // Check if the count of the current element is more than half of the array length
-            if (it.getValue() > nums.length / 2) {
-                return it.getKey(); // Return the majority element
-            }
-        }
-
-        // Return -1 if no majority element is found (though problem guarantees a majority element)
-        return -1;
+    // Count occurrences of each number
+    for (int num : nums) {
+        int count = map.getOrDefault(num, 0);  //the value mapped to num if it exists 0 if num is not in the map
+        map.put(num, count + 1);
     }
-    */
 
-    /*
+    // Find the number with count > n / 2
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        if (entry.getValue() > nums.length / 2) {
+            return entry.getKey();  
+        }
+    }
+
+    // Should not reach here as a majority element is guaranteed
+    return -1;
+}
+
     // 6th Approach: Optimal Approach(Using Moore’s Voting Algorithm) - Time Complexity = O(n), Space  Complexity = O(1)
     public int majorityElement(int[] nums) {
         int n = nums.length; // Length of the array
@@ -153,7 +125,6 @@ class Solution {
         // Return -1 if no majority element is found (though the problem guarantees one)
         return -1;
     }
-    */
     
     
     // 7th Approach: Optimal Approach(Using Moore’s Voting Algorithm) - Time Complexity = O(n), Space  Complexity = O(1)
