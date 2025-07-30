@@ -66,54 +66,12 @@ class Solution {
     }
     */
 
-    /*
-    // 3rd Approach: Better Approach(Using Sorting) - Time Complexity = O(n * log(n)), Space  Complexity = O(1)
-    public int majorityElement(int[] nums) {
-
-        // Sort the array
-        Arrays.sort(nums);
-        
-        // The majority element will be at the middle index
-        return nums[nums.length / 2];
-    }
-    */
-
-    /*
-    // 4th Approach: Better Approach(Using Sorting) - Time Complexity = O(n * log(n)), Space  Complexity = O(1)
-    // For Practice if majority element not present, in this case return -1
-    public int majorityElement(int[] nums) {
-        // Sort the array
-        Arrays.sort(nums);
-        
-        // The candidate for the majority element
-        int candidate = nums[nums.length / 2];
-        
-        // Verify that the candidate is the majority element
-        int count = 0;
-
-        for (int num : nums) {
-            if (num == candidate) {
-                count++;
-            }
-        }
-        
-        // Check if the count of the candidate is more than half the size of the array
-        if (count > nums.length / 2) {
-            return candidate;
-        }
-        
-        // Return -1 or handle the case where no majority element is present
-        // This should not be reached based on problem constraints, but added for completeness
-        return -1;
-    }
-    */
-
-    /*        
+    /*       
     // 5th Approach: Better Approach(Using HashMap) - Time Complexity = O(n), Space  Complexity = O(n)
     public int majorityElement(int[] nums) {
         // Create a HashMap to store the count of each element
         HashMap<Integer, Integer> map = new HashMap<>();
-        
+        use this only Map<Integer, Integer> map = new HashMap<>();
         // Traverse the array to populate the HashMap with counts
         for (int i = 0; i < nums.length; i++) {
             // Get the current count of nums[i] from the map; default to 0 if not present
