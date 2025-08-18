@@ -2,7 +2,7 @@
 
 
 class Solution {
-    /*
+    *
     // 1st Approach: Using Extra Space - Time Complexity = O(n), Space Complexity = O(n)
     public void moveZeroes(int[] nums) {
         // Length of the array
@@ -69,7 +69,7 @@ class Solution {
         }
     }
 
-    /*
+    *
     // 3rd Approach: Optimal Approach - Time Complexity = O(n), Space Complexity = O(1)
     public void moveZeroes(int[] nums) {
         // Length of the array
