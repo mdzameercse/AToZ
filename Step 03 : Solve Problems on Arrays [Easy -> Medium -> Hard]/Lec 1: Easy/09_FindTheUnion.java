@@ -7,7 +7,7 @@
 // n, m: size of arrays
 class Solution {
     //Function to return a list containing the union of the two arrays.
-    /*
+    *
     // 1st Approach: Using TreeMap - Time Complexity = O((n + m)log(n + m)), Space Complexity = O((n + m))
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m) {
         // Create a TreeMap to store elements in sorted order with their counts (though counts are not used in this case)
@@ -46,7 +46,7 @@ class Solution {
     */
 
     
-    /*
+    *
     // 2nd Approach: Using TreeSet - Time Complexity = O((n + m)log(n + m)), Space Complexity = O((n + m))
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m) {
         // Create a TreeSet to store unique elements in sorted order
@@ -75,7 +75,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 3rd Approach: Using 2 Pointers & If-Else - Time Complexity = O((n + m)), Space Complexity = O((n + m))
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m) {
         // Create an ArrayList to store the result (union of the two arrays)
