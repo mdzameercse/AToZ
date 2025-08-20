@@ -3,7 +3,7 @@
 
 class Solution {
 
-    /*
+    *
     // 1st Approach: Brute Force Approach (Using TreeSet) - Time Complexity = O(n * log(n)), Space Complexity = O(n)
     public int removeDuplicates(int[] nums) {
         // Initialize a TreeSet to store unique elements in sorted order.
@@ -35,7 +35,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 2nd Approach: Brute Force Approach (Using TreeMap) - Time Complexity = O(n * log(n)), Space Complexity = O(n)
     public int removeDuplicates(int[] nums) {
         TreeMap<Integer, Integer> map = new TreeMap<>(); 
