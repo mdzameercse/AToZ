@@ -70,6 +70,27 @@ class Solution {
         }
     }
     */
+    static void leftRotate(int arr[], int d)
+    { 
+        
+       int n=arr.length;
+       d=d%n;
+       int t[]=new int[n];
+       int j=0;
+       for(int i=d;i<n;i++)
+       {
+           t[j++]=arr[i];
+       }
+       for(int i=0;i<d;i++)
+       {
+           t[j++]=arr[i];
+       }
+       //coping
+       for(int i=0;i<n;i++)
+       {
+           arr[i]=t[i];
+       }
+  }
 
 
     // 3rd Approach: Using Reverse Array => TC = O(n), SC = O(1)
