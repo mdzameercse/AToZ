@@ -3,7 +3,7 @@
 
 class Solution {
     
-    /*
+    *
     // 1st Approach: Using Rotate One by One => TC = O(n * k), SC = O(1)
     public void rotate(int[] nums, int k) {
         // Length of the array
@@ -35,7 +35,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 2nd Approach: Using Extra Space => TC = O(n), SC = O(n)
     public void rotate(int[] nums, int k) {
         // Length of the array
