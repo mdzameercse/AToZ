@@ -2,7 +2,7 @@
 
 
 class Solution {
-    /*
+    *
     // 1st Approach: Using 2 Loops - Time Complexity = O(n ^ 2), Space Complexity = O(1)
     public int missingNumber(int[] nums) {
         // Iterate through each possible number from 0 to nums.length
@@ -31,7 +31,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 2nd Approach: Using Array Hashing - Time Complexity = O(n), Space Complexity = O(n)
     public int missingNumber(int[] nums) {
 
@@ -61,7 +61,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 3rd Approach: Using HashMap - Time Complexity = O(n), Space Complexity = O(n)
     public int missingNumber(int[] nums) {
 
@@ -96,7 +96,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 4th Approach: Using Sorting - Time Complexity = O(n * log(n)), Space Complexity = O(1)
     public int missingNumber(int[] nums) {
 
@@ -117,7 +117,7 @@ class Solution {
     }
     */
 
-    /*
+    *
     // 5th Approach: Using Formula - Time Complexity = O(n), Space Complexity = O(1)
     public int missingNumber(int[] nums) {
         // Get the length of the input array
