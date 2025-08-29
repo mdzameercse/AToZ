@@ -4,41 +4,41 @@
 class Solution {
 
     // Time Complexity = O(n), Space Complexity = O(n)
-    public String reverseWords(String s) {
-        Stack<String> stack = new Stack<String>();        
-        String str = "";
+    // public String reverseWords(String s) {
+    //     Stack<String> stack = new Stack<String>();        
+    //     String str = "";
 
-        for (int i = 0; i < s.length(); i++) {
+    //     for (int i = 0; i < s.length(); i++) {
 
-            if (s.charAt(i) == ' ') {
-                if (!str.isEmpty()) {  
-                    stack.push(str);
-                }
+    //         if (s.charAt(i) == ' ') {
+    //             if (!str.isEmpty()) {  
+    //                 stack.push(str);
+    //             }
 
-                str = "";  
-            } else {
-                str += s.charAt(i); 
-            }
-        }
+    //             str = "";  
+    //         } else {
+    //             str += s.charAt(i); 
+    //         }
+    //     }
 
-        if (!str.isEmpty()) {
-            stack.push(str);
-        }
+    //     if (!str.isEmpty()) {
+    //         stack.push(str);
+    //     }
 
-        String ans = "";
+    //     String ans = "";
         
-        while (!stack.isEmpty()) {
-            ans += stack.pop();   
+    //     while (!stack.isEmpty()) {
+    //         ans += stack.pop();   
 
-            if (!stack.isEmpty()) { 
-                ans += " ";
-            }
-        }
+    //         if (!stack.isEmpty()) { 
+    //             ans += " ";
+    //         }
+    //     }
 
-        return ans;
-    }
+    //     return ans;
+    // }
 }
- // Time Complexity = O(n), Space Complexity = O(n)
+ // Time Complexity = O(n), Space Complexity = O(n) 
 public class Main {
     public static void main(String[] args) {
         String str = "Hello World Java";
