@@ -54,4 +54,27 @@ public class Main {
         System.out.println("Reversed words: " + sb.toString().trim());
     }
 }
+class Solution {
+    public String reverseWords(String s) {
+         String words[]=s.trim().split("\\.+");
+        StringBuilder sb=new StringBuilder();
+        for(int i=words.length-1;i>=0;i--)
+        {
+             if (!words[i].isEmpty()) {  // ignore empty words from extra dots
+                sb.append(words[i]);
+                if (i > 0) sb.append(".");
+            }
+        }
+        
+        //Example:
+        // "..geeks..for.geeks." → ["", "geeks", "for", "geeks", ""]
+        // Notice the empty strings ("") caused by dots at the start and end.
+        
+    // Remove trailing dot if it exists
+        if (sb.length() > 0 && sb.charAt(sb.length() - 1) == '.') {
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        return sb.toString();
+    }
+}
 
