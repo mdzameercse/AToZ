@@ -38,3 +38,20 @@ class Solution {
         return ans;
     }
 }
+ // Time Complexity = O(n), Space Complexity = O(n)
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello World Java";
+
+        // split words, reverse them, and join again
+        String[] words = str.trim().split("\\s+"); // handles multiple spaces
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            sb.append(words[i]).append(" ");
+        }
+
+        System.out.println("Reversed words: " + sb.toString().trim());
+    }
+}
+
