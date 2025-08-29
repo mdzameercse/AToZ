@@ -81,7 +81,19 @@ class Solution {
             return entry.getKey();  
         }
     }
-
+    //    ✅ 1. Using forEach
+    // map.forEach((key, value) -> {
+    //     if (value > nums.length / 2) {
+    //         System.out.println(key); // or return in method
+    //     }
+    // });
+    
+    // ✅ 2. Using keySet() and get()
+    // for (Integer key : map.keySet()) {
+    //     if (map.get(key) > nums.length / 2) {
+    //         return key;
+    //     }
+    // }
     // Should not reach here as a majority element is guaranteed
     return -1;
 }
