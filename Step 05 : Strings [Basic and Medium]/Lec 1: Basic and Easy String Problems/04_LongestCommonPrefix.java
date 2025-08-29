@@ -8,16 +8,16 @@ class Solution {
         String s1 = strs[0];
         String s2 = strs[strs.length - 1];
 
-        int index = 0;
+        int i = 0;
 
-        while (index < s1.length() && index < s2.length()){
-            if(s1.charAt(index) == s2.charAt(index)){
-                index++;            
+        while (i < s1.length() && i< s2.length()){
+            if(s1.charAt(i) == s2.charAt(i)){
+                i++;            
             } else {
                 break;
             }
         }
 
-        return s2.substring(0, index);
+        return s2.substring(0, );
     }
 }
