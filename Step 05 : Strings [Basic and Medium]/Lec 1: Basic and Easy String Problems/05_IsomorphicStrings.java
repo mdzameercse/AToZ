@@ -13,11 +13,12 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             char c1 = s.charAt(i);
             char c2 = t.charAt(i);
-
-            // check if already mapped
-            if (mapS[c1] == 0 && mapT[c2] == 0) {
-                mapS[c1] = c2; // s -> t
-                mapT[c2] = c1; // t -> s
+             
+            //  For an int[], the default value is 0. is not mapped yet 
+            //mapS['a'] = 0  ,mapS['b'] = 0 , mapS['c'] = 0 ,... all = 0 gives ascii index 
+            if (mapS[c1] == 0 && mapT[c2] == 0) { //By default, every element in an int[] is initialized to 0 in Java.
+                mapS[c1] = c2; // s -> t         If neither c1 (from s) nor c2 (from t) have been mapped yet → create a new mapping in both directions.
+                mapT[c2] = c1; // t -> s         Example: "p" → "t", so mapS['p']='t' and mapT['t']='p'.
             } else if (mapS[c1] != c2 || mapT[c2] != c1) {
                 return false; // mismatch mapping
             }
