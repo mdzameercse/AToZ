@@ -17,7 +17,7 @@ class Solution {
         // Check for optional sign
         if (s.charAt(i) == '-' || s.charAt(i) == '+') {
             sign = (s.charAt(i) == '-') ? -1 : 1;
-            i++;
+            i++;// this is for not cheack from agian 0 index;
         }
 
         // Process digits
