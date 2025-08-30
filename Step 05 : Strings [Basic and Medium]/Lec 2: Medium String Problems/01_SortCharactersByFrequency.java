@@ -1,22 +1,23 @@
 class Solution {
     public String freqSort(String s) {
        Map<Character,Integer> map=new HashMap<>();
-       
        StringBuilder sb=new StringBuilder();
+        
        for(char c:s.toCharArray())
         map.put(c,map.getOrDefault(c,0)+1);
         
         List<Character> list=new ArrayList<>(map.keySet());
         
         // Sort by frequency ascending, then lexicographically
-        //list.sort((ob1,ob2)->map.get(ob1)-map.get(ob2)); //lamda expression
-        // Sort by frequency ascending, then lexicographically
-        list.sort((a, b) -> {
-            int freqCompare = map.get(a) - map.get(b); // ascending frequency
-            if (freqCompare == 0)
-                return a - b; // lexicographic order if same frequency
-            return freqCompare;
-        });
+        list.sort((ob1,ob2)->map.get(ob1)-map.get(ob2)); //lamda expression
+        
+        // Sort by frequency ascending, then lexicographically if needed
+        // list.sort((a, b) -> {
+        //     int freqCompare = map.get(a) - map.get(b); // ascending frequency
+        //     if (freqCompare == 0)
+        //         return a - b; // lexicographic order if same frequency
+        //     return freqCompare;
+        // });
 
         
         for(char c:list){
