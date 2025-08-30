@@ -2,23 +2,18 @@
 
 
 class Solution {
-    public int maxDepth(String s) {
-
-        int currCount = 0;
-        int maxCount = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') {
-                currCount++;
-            }
-
-            maxCount = Math.max(currCount, maxCount);
-
-            if (s.charAt(i) == ')') {
-                currCount--;
-            }
+    public static int maxDepth(String s) {
+        int currCount=0, maxCount=0;
+        for(int i=0;i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            if(c=='(')
+             currCount++;
+            else if(c==')')
+            currCount--;
+             maxCount=Math.max( maxCount,currCount);
         }
-
-        return maxCount;
+        return  maxCount;
     }
 }
+
