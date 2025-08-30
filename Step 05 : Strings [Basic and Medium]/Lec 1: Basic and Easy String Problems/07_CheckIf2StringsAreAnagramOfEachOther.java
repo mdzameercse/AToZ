@@ -18,7 +18,6 @@ class Solution {
             if (count[t.charAt(i) - 'a'] == 0) {
                 return false;
             }
-            
             count[t.charAt(i) - 'a'] -= 1;
         }
 
