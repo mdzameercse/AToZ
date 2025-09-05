@@ -162,6 +162,7 @@ class Solution {
                 int count = 1;
 
                 // Count consecutive elements starting from currentNum
+                //this most take 2n and contains take 0(1) wc o(n)
                 while (set.contains(currentNum + 1)) {
                     currentNum++;
                     count++;
