@@ -37,43 +37,6 @@ class Solution {
     }
     */
 
-    /*
-    // 2nd Approach: Brute Force Approach (Using Extra Space, but one list) - Time Complexity = O(n), Space Complexity = O(n)
-    public int[] rearrangeArray(int[] nums) {
-        // Create a new array to store the rearranged elements.
-        int[] ans = new int[nums.length];
-
-        // Create a list to store negative numbers.
-        ArrayList<Integer> negative = new ArrayList<>();
-
-        // Iterate through the input array.
-        for (int i = 0; i < nums.length; i++) {
-
-            // If the number is negative, add it to the negative list.
-            if (nums[i] < 0) {
-                negative.add(nums[i]);
-            }
-        }
-
-        // Initialize two pointers: j for the new array index and k for the negative list index.
-        int j = 0;
-        int k = 0;
-
-        // Iterate through the input array again.
-        for (int i = 0; i < nums.length; i++) {
-
-            // If the number is positive, place it in the new array.
-            if (nums[i] > 0) {
-                ans[j++] = nums[i];  // Place positive number at the current j and then increment j.
-                ans[j++] = negative.get(k++);  // Place corresponding negative number at the next j and then increment both j and k.
-            }
-        }
-
-        // Return the rearranged array.
-        return ans;
-    }
-    */
-
 
     // 3rd Approach: Optimal Approach - Time Complexity = O(n), Space Complexity = O(n)
     public int[] rearrangeArray(int[] nums) {
@@ -108,3 +71,51 @@ class Solution {
         return ans;
     }
 }
+
+//for even no.of elemnts / even also
+// Approach
+
+// Separate Positives and Negatives:
+// Traverse the array and store positive (and zero) numbers in one list.
+// Store negative numbers in another list.
+// Merge Alternately:
+// Start with a positive number, then alternate between positive and negative.
+// If one list gets exhausted, append the remaining elements of the other list.
+public class RearrangeBySign {
+    public static void rearrange(int[] arr) {
+        List<Integer> positives = new ArrayList<>();
+        List<Integer> negatives = new ArrayList<>();
+
+        // Step 1: Separate positives and negatives
+        for (int num : arr) {
+            if (num >= 0)
+                positives.add(num);
+            else
+                negatives.add(num);
+        }
+
+        int i = 0, p = 0, n = 0;
+        boolean positiveTurn = true; // start with positive
+
+        // Step 2: Merge alternately
+        while (p < positives.size() && n < negatives.size()) {
+            if (positiveTurn) {
+                arr[i++] = positives.get(p++);
+            } else {
+                arr[i++] = negatives.get(n++);
+            }
+            positiveTurn = !positiveTurn; // alternate
+        }
+
+        // Step 3: Append remaining elements
+        while (p < positives.size()) {
+            arr[i++] = positives.get(p++);
+        }
+        while (n < negatives.size()) {
+            arr[i++] = negatives.get(n++);
+        }
+    }
+// Time Complexity
+// O(n) for traversing and rearranging.
+// Space Complexity
+// O(n) (because we use extra lists to store positives and negatives).
