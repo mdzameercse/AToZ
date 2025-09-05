@@ -116,6 +116,6 @@ public class RearrangeBySign {
         }
     }
 // Time Complexity
-// O(n) for traversing and rearranging.
+// O(2n) for traversing and rearranging.
 // Space Complexity
 // O(n) (because we use extra lists to store positives and negatives).
