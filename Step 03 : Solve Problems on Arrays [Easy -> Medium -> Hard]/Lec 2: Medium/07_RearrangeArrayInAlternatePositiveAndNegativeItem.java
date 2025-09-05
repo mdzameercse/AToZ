@@ -119,3 +119,14 @@ public class RearrangeBySign {
 // O(2n) for traversing and rearranging.
 // Space Complexity
 // O(n) (because we use extra lists to store positives and negatives).
+    //notes
+// Total = O(n) + O(n) + O(n) → O(3n)
+// Which simplifies to O(n).
+
+// Why Do We Still Call It O(n)?
+
+// Big-O focuses on growth rate as n → ∞.
+
+// 2n, 3n, 5n → all grow linearly with n.
+
+// Constants (2, 3, etc.) are dropped
