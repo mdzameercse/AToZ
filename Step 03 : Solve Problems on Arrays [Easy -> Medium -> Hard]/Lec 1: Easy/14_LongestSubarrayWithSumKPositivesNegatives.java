@@ -144,4 +144,20 @@ class Solution{
         return maxi;
     }
     */
+   class Solution {
+    public int longestSubarray(int[] nums, int k) {
+        int sum=0;
+        int max=0, i=0;
+        for(int j=0; j<nums.length; j++) {
+            sum += nums[j];
+            while(i <= j && sum > k) {
+                sum -= nums[i];
+                i++;
+            }
+            if(sum == k)
+                max = Math.max(max, j - i + 1);
+        }
+        return max;
+    }
+}
 }
