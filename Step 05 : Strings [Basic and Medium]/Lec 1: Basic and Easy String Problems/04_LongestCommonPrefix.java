@@ -18,6 +18,6 @@ class Solution {
             }
         }
 
-        return s2.substring(0, );
+        return s2.substring(0, i);
     }
 }
