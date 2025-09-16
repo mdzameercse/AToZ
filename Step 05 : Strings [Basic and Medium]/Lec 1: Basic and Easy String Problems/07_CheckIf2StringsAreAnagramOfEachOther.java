@@ -54,7 +54,7 @@ class GFG {
 
         int count = 0;
         for (char ch : map.keySet()) {
-            count += map.get(ch);
+            count += map.get(ch); //no.of charator which are different
         }
 
         if (count > k)
