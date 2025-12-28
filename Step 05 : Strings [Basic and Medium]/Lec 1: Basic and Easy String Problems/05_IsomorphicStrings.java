@@ -46,13 +46,12 @@ class Solution {
                     return false;
                 }
             } else {
-                // not mapped yet
-                if (mapped.contains(c2)) {
+                // mapped to another one 
+                if (mapped.contains(c2))
                     return false; // another char already maps to c2
-                }
-                map.put(c1, c2);
-                mapped.add(c2);
             }
+             map.put(c1, c2);
+             mapped.add(c2);
         }
         return true;
     }
