@@ -49,7 +49,9 @@ class Solution {
             // If the character is an operator
             else {
                 // Pop from the stack while precedence of the top of the stack is greater than or equal to the current operator
-                while (!stack.isEmpty() &&  precedence(ch)<=precedence(stack.peek()) ) {
+                while (!stack.isEmpty() &&  while(!stack.isEmpty() && //prec(c)<=prec(stack.peek())
+                     (prec(c) < prec(stack.peek()) ||
+                     (prec(c) == prec(stack.peek()) && c != '^'))) {
                     result.append(stack.pop());
                 }
                 stack.push(ch);
