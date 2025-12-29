@@ -37,6 +37,10 @@ class Solution {
             }
             else
             {
+                    // Interview-safe rule 🧠
+                    // Operator set	Can use <= ?
+                    // + - * /	✅ YES
+                    // includes ^	❌ NO
                 while(!stack.isEmpty() && //prec(c)<=prec(stack.peek())
                      (prec(c) <prec(stack.peek()) ||
                      (prec(c) == prec(stack.peek()) && c == '^'))) // just this ======
