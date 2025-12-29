@@ -48,6 +48,10 @@ class Solution {
             }
             // If the character is an operator
             else {
+                                        // Interview-safe rule 🧠
+                                        // Operator set	Can use <= ?
+                                            // + - * /	✅ YES
+                                            // includes ^	❌ NO
                 // Pop from the stack while precedence of the top of the stack is greater than or equal to the current operator
                 while (!stack.isEmpty() &&  while(!stack.isEmpty() && //prec(c)<=prec(stack.peek())
                      (prec(c) < prec(stack.peek()) ||
