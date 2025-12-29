@@ -1,0 +1,52 @@
+class Solution {
+    public static int prec(char c) {
+        if (c == '^')  // Exponent operator has highest precedence
+            return 3;
+        else if (c == '/' || c == '*')  // Multiplication and division have higher precedence than addition
+            return 2;
+        else if (c == '+' || c == '-')  // Addition and subtraction have lowest precedence
+            return 1;
+        else
+            return -1;
+    }
+    public String infixToPrefix(String s) {
+        
+        Stack<Character> stack=new Stack<>();
+        StringBuilder ans=new StringBuilder();
+        
+        StringBuilder str=new StringBuilder();
+        for(int i=s.length()-1;i>=0;i--){
+            if(s.charAt(i)=='(')
+             str.append(')');
+            else if(s.charAt(i)==')')
+             str.append('(');
+            else
+              str.append(s.charAt(i));
+        }
+        for(char c:str.toString().toCharArray())
+        {
+            if(Character.isLetterOrDigit(c))
+               ans.append(c);
+            else if(c=='(')
+               stack.push(c);
+            else if(c==')')
+            {
+                while(stack.peek()!='(')
+                  ans.append(stack.pop());
+                stack.pop(); //remove '('
+            }
+            else
+            {
+                while(!stack.isEmpty() && //prec(c)<=prec(stack.peek())
+                     (prec(c) <prec(stack.peek()) ||
+                     (prec(c) == prec(stack.peek()) && c == '^'))) // just this ======
+                     ans.append(stack.pop());
+            stack.push(c);//move current  oprator to stack
+            }
+        }
+        while(!stack.isEmpty())
+         ans.append(stack.pop());
+      return ans.reverse().toString();
+        
+    }
+}
