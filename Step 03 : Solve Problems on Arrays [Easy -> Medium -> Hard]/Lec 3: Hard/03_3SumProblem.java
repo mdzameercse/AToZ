@@ -93,9 +93,7 @@ class Solution {
         // Iterate through the array, fixing one element at a time.
         for (int i = 0; i < nums.length - 2; i++) {
             // Skip duplicate elements to avoid duplicate triplets in the ans.
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
+            if (i > 0 && nums[i] == nums[i - 1])continue;
 
             // Initialize two pointers:
             // 'left' starts from the next element after the fixed element.
@@ -107,28 +105,21 @@ class Solution {
             while (left < right) {
                 // Calculate the sum of the triplet.
                 int sum = nums[i] + nums[left] + nums[right];
-                
-                if (sum == 0) {
-                    // If the sum is zero, we found a valid triplet.
-                    ans.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                    
-                    // Skip duplicate elements to avoid duplicate triplets in the ans.
-                    while (left < right && nums[left] == nums[left + 1]) {
-                        left++;
-                    }
-                    while (left < right && nums[right] == nums[right - 1]) {
-                        right--;
-                    }
-                    
-                    // Move both pointers inward after finding a valid triplet.
-                    left++;
-                    right--;
-                } else if (sum < 0) {
+                ///
+                if (sum < 0) {
                     // If the sum is less than zero, move the left pointer to the right to increase the sum.
                     left++;
-                } else {
+                } else if(sum>0){
                     // If the sum is greater than zero, move the right pointer to the left to decrease the sum.
                     right--;
+                }
+                else
+                {
+                    ans.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                        // Skip duplicate elements to avoid duplicate triplets in the ans.
+                    while (nums[left] == nums[left + 1])left++;
+                    // Skip duplicate elements to avoid duplicate triplets in the ans.
+                    while (nums[right] == nums[right - 1]) right--;
                 }
             }
         }
