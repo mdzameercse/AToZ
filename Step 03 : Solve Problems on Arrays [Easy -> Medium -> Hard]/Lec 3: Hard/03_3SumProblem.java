@@ -25,6 +25,7 @@ class Solution {
 
                         // Sort the triplet to ensure uniqueness (i.e., avoid [a, b, c] and [c, b, a] being considered different).
                         triplet.sort(null);
+                        Collection.srot(triplet);
 
                         // Add the sorted triplet to the set, ensuring no duplicates are added.
                         set.add(triplet);
