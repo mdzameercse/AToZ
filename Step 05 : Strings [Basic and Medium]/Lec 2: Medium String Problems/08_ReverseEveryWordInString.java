@@ -2,39 +2,17 @@
 
 
 class Solution {
-
-    // Time Complexity = O(n), Space Complexity = O(n)
     public String reverseWords(String s) {
-        Stack<String> stack = new Stack<String>();        
-        String str = "";
-
-        for (int i = 0; i < s.length(); i++) {
-
-            if (s.charAt(i) == ' ') {
-                if (!str.isEmpty()) {  
-                    stack.push(str);
-                }
-
-                str = "";  
-            } else {
-                str += s.charAt(i); 
-            }
+        // s=s.trim();
+        // String ss[]=s.split("\\s+");
+        String ss[]=s.trim().split("\\s+");
+        StringBuilder sb=new StringBuilder();
+        for(int i=ss.length-1;i>=0;i--)
+        { 
+           sb.append(ss[i]+" ");
+           //if(i!=0)
+           //sb.append(" ");
         }
-
-        if (!str.isEmpty()) {
-            stack.push(str);
-        }
-
-        String ans = "";
-        
-        while (!stack.isEmpty()) {
-            ans += stack.pop();   
-
-            if (!stack.isEmpty()) { 
-                ans += " ";
-            }
-        }
-
-        return ans;
+      return sb.toString().trim();
     }
 }
